@@ -4,8 +4,8 @@ from gensim.models.keyedvectors import KeyedVectors
 from gensim.models.wrappers import FastText
 from nltk.corpus import stopwords
 
-# w2v_model = KeyedVectors.load_word2vec_format('path\to\GoogleNews-vectors-negative300.bin.gz', binary=True)
-# fasttext_model = FastText.load_fasttext_format('path\to\cc.en.300.bin')
+# w2v_model = KeyedVectors.load_word2vec_format('path/to/GoogleNews-vectors-negative300.bin.gz', binary=True)
+# fasttext_model = FastText.load_fasttext_format('path/to/cc.en.300.bin')
 
 glove_model = KeyedVectors.load_word2vec_format("interests/Semantic_Similarity/data/datatest_word2vec.txt")
 

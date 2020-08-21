@@ -4,10 +4,10 @@ from gensim.models.keyedvectors import KeyedVectors
 from gensim.models.wrappers import FastText
 from nltk.corpus import stopwords
 
-# w2v_model = KeyedVectors.load_word2vec_format('path/to/GoogleNews-vectors-negative300.bin.gz', binary=True)
-# fasttext_model = FastText.load_fasttext_format('path/to/cc.en.300.bin')
+# w2v_model = KeyedVectors.load_word2vec_format('path\to\GoogleNews-vectors-negative300.bin.gz', binary=True)
+# fasttext_model = FastText.load_fasttext_format('path\to\cc.en.300.bin')
 
-glove_model = KeyedVectors.load_word2vec_format("interests\\Semantic_Similarity\\data\\datatest_word2vec.txt")
+glove_model = KeyedVectors.load_word2vec_format("interests/Semantic_Similarity/data/datatest_word2vec.txt")
 
 
 def calculate_similarity(source_doc, target_doc, embedding="Glove", threshold=0):
@@ -84,10 +84,6 @@ def calculate_similarity(source_doc, target_doc, embedding="Glove", threshold=0)
         return csim
 
     if embedding == "Word2Vec":
-        w2v_model = KeyedVectors.load_word2vec_format(
-            'Semantic_Similarity/Word_Embedding/data/GoogleNews-vectors-negative300.bin',
-            binary=True,
-        )
         source_vec = w2v_vectorize(source_doc)
         target_vec = w2v_vectorize(target_doc)
         sim_score = cosine_sim(source_vec, target_vec)
@@ -106,9 +102,6 @@ def calculate_similarity(source_doc, target_doc, embedding="Glove", threshold=0)
             return sim_score
 
     elif embedding == "FastText":
-        fasttext_model = FastText.load_fasttext_format(
-            'Semantic_Similarity/Word_Embedding/data/cc.en.300.bin'
-        )
         source_vec = fasttext_vectorize(source_doc)
         target_vec = fasttext_vectorize(target_doc)
         sim_score = cosine_sim(source_vec, target_vec)

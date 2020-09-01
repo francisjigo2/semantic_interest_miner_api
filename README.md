@@ -6,6 +6,13 @@ This is the api for the main algorithms that was used by semantic interest miner
 
 Install the required dependencies using `pip install -r requirements.txt`
 
+This project also requires external resources that can be obtained using:
+```
+python -m nltk.downloader stopwords
+python -m nltk.downloader universal_tagset
+python -m spacy download en # download the english model
+```
+
 To make migrations using:
 
 ```
